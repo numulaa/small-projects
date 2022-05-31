@@ -29,20 +29,26 @@
         color: hsl(228, 45%, 44%);
       }
     </style>
+    <script src="app.js" defer></script>
   </head>
   <body>
     <header>
       <nav>
-        <img src="images/logo.svg" alt="logo" />
-        <section class="nav-toggle">
-          <ul>
+        <div>
+          <button class="nav-toggle" aria-label="open navigation">
+            <span class="hamburger"></span>
+          </button>
+          <img src="images/logo.svg" alt="logo" />
+        </div>
+        <section class="nav-items">
+          <ul class="first-nav-items">
             <li><a href="#">Features</a></li>
             <li><a href="#">Pricing</a></li>
             <li><a href="#">Resources</a></li>
           </ul>
           <ul>
-            <li><a href="#"> Login</a></li>
-            <li><a href="#">Sign Up</a></li>
+            <li><a class="nav-login" href="#"> Login</a></li>
+            <li><a class="sign-up" href="#">Sign Up</a></li>
           </ul>
         </section>
       </nav>
@@ -64,10 +70,26 @@
     <section class="advanced-stat">
       <section class="form-sec">
         <form class="form" action="">
-          <input type="text" placeholder="Shorten a link here..." />
-          <button>Shorten It!</button>
+          <div class="input-wrapper">
+            <input
+              class="input-link"
+              type="text"
+              placeholder="Shorten a link here..."
+            />
+            <p class="error-message hidden">Please add link</p>
+          </div>
+          <button class="shorten-btn">Shorten It!</button>
         </form>
       </section>
+      <!-- <section class="results-sec hidden">
+        <section class="results">
+          <div>
+            <p class="original-link">original link</p>
+            <p class="short-link">shorted link</p>
+          </div>
+          <button class="copy-btn" type="copy">Copy</button>
+        </section>
+      </section> -->
       <h2>Advanced Statistics</h2>
       <p>
         Track how your links are performing across the web with our advanced
@@ -75,7 +97,9 @@
       </p>
       <div class="advanced-wrapper">
         <section class="advanced-items advance1">
-          <img src="images/icon-brand-recognition.svg" alt="" />
+          <div class="image-advance">
+            <img src="images/icon-brand-recognition.svg" alt="" />
+          </div>
           <h3>Brand Recognition</h3>
           <p>
             Boost your brand recognition with each click. Generic links don’t
@@ -83,7 +107,9 @@
           </p>
         </section>
         <section class="advanced-items advance2">
-          <img src="images/icon-detailed-records.svg" alt="" />
+          <div class="image-advance">
+            <img src="images/icon-detailed-records.svg" alt="" />
+          </div>
           <h3>Detailed Records</h3>
           <p>
             Gain insights into who is clicking your links. Knowing when and
@@ -91,7 +117,9 @@
           </p>
         </section>
         <section class="advanced-items advance3">
-          <img src="images/icon-fully-customizable.svg" alt="" />
+          <div class="image-advance">
+            <img src="images/icon-fully-customizable.svg" alt="" />
+          </div>
           <h3>Fully Customizable</h3>
           <p>
             Improve brand awareness and content discoverability through
